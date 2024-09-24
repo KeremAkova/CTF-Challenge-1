@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge: Find the Hidden Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin: 0 auto;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .message {
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CTF Challenge</h1>
+        <p>There is snow outside today. Snow is really cool.</p>
+        <a href="secret_code.txt" download>Secret Code</a>
+        <br><br>
+
+        <p>Once you find the hidden message, enter the password below:</p>
+
+        <input type="password" id="password" placeholder="Enter the password">
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+
+        <div id="result" class="message"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "AAAAMINAKEEEE"; // Set the correct password here
+            const enteredPassword = document.getElementById('password').value;
+
+            const resultDiv = document.getElementById('result');
+            if (enteredPassword === correctPassword) {
+                resultDiv.style.color = "green";
+                resultDiv.innerHTML = "Correct password!";
+            } else {
+                resultDiv.style.color = "red";
+                resultDiv.innerHTML = "Incorrect password, try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
